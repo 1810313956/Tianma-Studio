@@ -1,0 +1,60 @@
+diff --git a/src/main/core/application/serviceRegistry.ts b/src/main/core/application/serviceRegistry.ts
+index be4578b..a4f62bf 100644
+--- a/src/main/core/application/serviceRegistry.ts
++++ b/src/main/core/application/serviceRegistry.ts
+@@ -37,6 +37,7 @@ import { BrowserSessionService } from '@main/features/browser'
+ import { FileProcessingService, TesseractRuntimeService } from '@main/features/fileProcessing'
+ import { KnowledgeService, KnowledgeVectorStoreService } from '@main/features/knowledge'
+ import { MiniAppRuntimeService } from '@main/features/miniApp/runtime/MiniAppRuntimeService'
++import { ScriptLoopService } from '@main/features/scriptLoop/ScriptLoopService'
+ import { IpcApiService } from '@main/ipc/IpcApiService'
+ import { AnalyticsService } from '@main/services/AnalyticsService'
+ import { AppMenuService } from '@main/services/AppMenuService'
+@@ -180,6 +181,7 @@ export const services = {
+   ClaudeCodeProcessManager,
+   AgentSessionRuntimeService,
+   AgentSessionDeliveryService,
++  ScriptLoopService,
+   AgentJobsService,
+   AgentLifecycleService,
+   ChannelManager,
+diff --git a/src/main/ipc/handlers/ipcHandlers.ts b/src/main/ipc/handlers/ipcHandlers.ts
+index a28d04f..1068191 100644
+--- a/src/main/ipc/handlers/ipcHandlers.ts
++++ b/src/main/ipc/handlers/ipcHandlers.ts
+@@ -40,6 +40,7 @@ import { proxyHandlers } from './proxy'
+ import { quickAssistantHandlers } from './quickAssistant'
+ import { screenshotHandlers } from './screenshot'
+ import { screenshotChatHandlers } from './screenshotChat'
++import { scriptLoopHandlers } from './scriptLoop'
+ import { selectionHandlers } from './selection'
+ import { skillHandlers } from './skill'
+ import { systemHandlers } from './system'
+@@ -103,6 +104,7 @@ export const ipcHandlers: IpcHandlersFor<IpcRequestSchemas> = {
+   ...screenshotHandlers,
+   ...screenshotChatHandlers,
+   ...selectionHandlers,
++  ...scriptLoopHandlers,
+   ...skillHandlers,
+   ...systemHandlers,
+   ...tabHandlers,
+diff --git a/src/shared/ipc/schemas/ipcSchemas.ts b/src/shared/ipc/schemas/ipcSchemas.ts
+index e8b9aee..49c1004 100644
+--- a/src/shared/ipc/schemas/ipcSchemas.ts
++++ b/src/shared/ipc/schemas/ipcSchemas.ts
+@@ -38,6 +38,7 @@ import { proxyRequestSchemas } from './proxy'
+ import { type QuickAssistantEventSchemas, quickAssistantRequestSchemas } from './quickAssistant'
+ import { type ScreenshotEventSchemas, screenshotRequestSchemas } from './screenshot'
+ import { screenshotChatRequestSchemas, type ScreenshotChatEventSchemas } from './screenshotChat'
++import { scriptLoopRequestSchemas } from './scriptLoop'
+ import { type SelectionEventSchemas, selectionRequestSchemas } from './selection'
+ import { skillRequestSchemas } from './skill'
+ import { type SystemEventSchemas, systemRequestSchemas } from './system'
+@@ -99,6 +100,7 @@ export const ipcRequestSchemas = {
+   ...screenshotRequestSchemas,
+   ...screenshotChatRequestSchemas,
+   ...selectionRequestSchemas,
++  ...scriptLoopRequestSchemas,
+   ...skillRequestSchemas,
+   ...systemRequestSchemas,
+   ...tabRequestSchemas,

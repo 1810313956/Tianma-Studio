@@ -1,0 +1,8 @@
+﻿智能体ID,名称,模型,指令长度,知识库绑定数
+f7a65824-3be9-4e21-939d-22ff3eddbf75,剧匠,deepseek::deepseek-flash,2012,3
+67d28fb4-206a-4ed3-8cd7-82b6918142dd,剧匠·骨架,deepseek::deepseek-flash,2506,5
+7955ebd1-ef94-4b64-88b4-2c69693ca53d,剧匠·落笔,deepseek::deepseek-flash,1729,8
+60328c16-691d-4007-a327-58a907233f29,剧匠·审稿,deepseek::deepseek-flash,3032,5
+7f3cd220-b340-4d4a-848f-fb461a801e3c,智能体搭建助手,deepseek::deepseek-flash,167,0
+0cf9eb6c-e32d-4707-9ae6-eed496a5dd09,Tianma 小助手,deepseek::deepseek-flash,0,0
+cherry-support,产品反馈,deepseek::deepseek-flash,0,0

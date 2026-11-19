@@ -1,0 +1,8 @@
+# 大文件与构建产物不进仓库，见 Release
+dist/
+pkg/
+node_modules/
+out/
+*.log
+.DS_Store
+Thumbs.db
